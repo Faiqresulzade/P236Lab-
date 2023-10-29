@@ -1,0 +1,22 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+}
+
+@using LabProject.Models
+@model List<Student> 
+
+    <div>
+        <ul>
+            @foreach (var student in Model)
+            {
+                <li>
+                    <a asp-controller="home" asp-action="studentDetails" asp-route-id="@student.Id" >
+                        @student.Name @student.Surname
+                    </a>
+                </li>
+
+            }
+        </ul>
+    </div>
